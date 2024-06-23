@@ -1,0 +1,69 @@
+# from django.http import HttpResponse, JsonResponse
+# from django.shortcuts import render
+# from django.conf import settings
+# from openai import OpenAI
+# from django.views.decorators.csrf import csrf_exempt
+
+# # OpenAI.api_key = settings.SECRET_KEY
+
+# # Create your views here.
+# @csrf_exempt
+# def generateimage(request):
+#     context = {}
+#     if request.method == 'POST':
+#         try:
+#             prompt = request.POST['prompt']
+#             client = OpenAI(api_key=settings.SECRET_KEY)
+#             # response = client.images.generate(
+#             # model="dall-e-2",
+#             # prompt=prompt,
+#             # n=1,
+#             # size="256x256"
+#             # )
+#             # image_url = response['data'][0]['url']
+
+#             response = client.images.generate(
+#             model="dall-e-2",
+#             prompt=prompt,
+#             size="256x256",
+#             n=1,
+#             )
+
+#             image_url = response.data[0].url
+#             # print(image_url)
+#             context['image_url'] = image_url
+#             context['submitted'] = True
+#             return JsonResponse(context)
+#             # return render(request, 'generateImage.html', {'image_url':image_url})
+#             return render(request, 'generateImage.html', context)
+#         except Exception as e:
+#             print(f"Error generating image: {e}")
+#             err_msg = 'Failed to generate Image'
+#             return render(request, 'generateImage.html', {'err_msg':err_msg})
+#     return render(request, 'generateImage.html')
+
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
+from django.conf import settings
+from openai import OpenAI
+from django.views.decorators.csrf import csrf_exempt
+import requests
+
+@csrf_exempt
+def generateimage(request):
+    if request.method == 'POST':
+        try:
+            prompt = request.POST['prompt']
+            client = OpenAI(api_key=settings.SECRET_KEY)
+            response = client.images.generate(
+                model="dall-e-2",
+                prompt=prompt,
+                size="256x256",
+                n=1,
+            )
+            image_url = response.data[0].url
+            return JsonResponse({'image_url': image_url})
+        except Exception as e:
+            print(f"Error generating image: {e}")
+            return JsonResponse({'err_msg': 'Failed to generate Image'}, status=500)
+    return render(request, 'generateImage.html')
