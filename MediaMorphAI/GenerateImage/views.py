@@ -3,9 +3,11 @@ from django.shortcuts import render
 from django.conf import settings
 from openai import OpenAI
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 import requests
 
 @csrf_exempt
+@login_required
 def generateimage(request):
     if request.method == 'POST':
         try:
@@ -23,3 +25,5 @@ def generateimage(request):
             print(f"Error generating image: {e}")
             return JsonResponse({'err_msg': 'Failed to generate Image'}, status=500)
     return render(request, 'generateImage.html')
+
+# TODO: FIX DOWNLOAD IMAGE

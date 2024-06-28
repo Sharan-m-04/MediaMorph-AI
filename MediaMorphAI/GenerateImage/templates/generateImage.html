@@ -2,6 +2,10 @@
 {% load static %}
 {% block title %} MedaiMorph AI | Generate Image {% endblock %}
 {% block content %}
+<div class="container">
+    <p class="greet">Welcome, {{user}}</p>
+    <a href="/accounts/logout" class="logoutBtn">Logout</a>
+</div>
 <form action="" method="post" id="generateImageForm">
     {% csrf_token %}
     <input type="text" name="prompt" id="prompt" placeholder="Enter Your Prompt">
@@ -12,11 +16,11 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $('#generateImageForm').on('submit', function(event) {
+    $(document).ready(function () {
+        $('#generateImageForm').on('submit', function (event) {
             event.preventDefault();
             $('#imgContainer').html('<div class="loading"></div>');
-            
+
             $.ajax({
                 url: "{% url 'generateimage' %}",
                 type: "POST",
@@ -24,16 +28,16 @@
                     'prompt': $('#prompt').val(),
                     'csrfmiddlewaretoken': $('[name=csrfmiddlewaretoken]').val()
                 },
-                success: function(response) {
-                    if(response.image_url) {
-                        $('#imgContainer').html('<img src="'+ response.image_url +'" width="256" height="256" alt="Generated Image">');
+                success: function (response) {
+                    if (response.image_url) {
+                        $('#imgContainer').html('<img src="' + response.image_url + '" width="256" height="256" alt="Generated Image">');
                         // download img not working
-                        $('#downloadBtn').html('<a id="download" href="'+ response.image_url +'" download="media_morph_ai.png">Download Image</a>');
+                        $('#downloadBtn').html('<a id="download" href="' + response.image_url + '" download="media_morph_ai.png">Download Image</a>');
                     } else {
                         $('#imgContainer').html('<p>Failed to generate image.</p>');
                     }
                 },
-                error: function(xhr, errmsg, err) {
+                error: function (xhr, errmsg, err) {
                     console.log(xhr.status + ": " + xhr.responseText);
                     $('#imgContainer').html('<p>Failed to generate image.</p>');
                 }
