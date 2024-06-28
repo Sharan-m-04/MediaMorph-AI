@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css"
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body>
@@ -21,18 +17,19 @@
     <header class="header">
         <div class="logo">MediaMorph AI</div>
         <nav>
-            <a href="#home">Home</a>
+            <a href="#">Home</a>
             <a href="#about">About Us</a>
             <a href="#how-it-works">How It Works</a>
             <a href="#features">Features</a>
             <a href="#contact">Contact</a>
+            <button class="loginBtn" onclick="loginBtn()">Login</button>
         </nav>
     </header>
 
     <section class="hero" id="home">
         <h1>MediaMorph AI</h1>
         <p>Generative AI for content creation</p>
-        <button>Get Started</button>
+        <button class="getstartedBtn" onclick="getstarted()">Get Started</button>
     </section>
 
     <section id="about">
@@ -61,7 +58,7 @@
             </div>
             <div class="step">
                 <i class="fa-solid fa-image img-icon"></i>
-                <p>Our AI generates an image.</p>
+                <p>AI generates an image.</p>
             </div>
             <div class="step">
                 <i class="fa-solid fa-cloud-arrow-down download-icon"></i>
@@ -92,11 +89,8 @@
         <h2>Contact Us</h2>
         <form>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
             <input type="email" id="email" name="email" placeholder="Enter the E-mail" required>
-
             <textarea id="message" name="message" placeholder="Enter the message" required rows="5"></textarea>
-
             <button type="submit" id="submitBtn" class="submitBtn">Submit</button>
         </form>
     </section>
@@ -109,7 +103,7 @@
             • <a href="mailto:shivamv1972@gmail.com" class="DevInfo">Vishnu</a>
         </p>
         <div>
-            <a href="#home" class="footernav">Home</a>
+            <a href="#" class="footernav">Home</a>
             <a href="#about" class="footernav">About Us</a>
             <a href="#how-it-works" class="footernav">How It Works</a>
             <a href="#features" class="footernav">Features</a>
@@ -117,27 +111,7 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/b2b6d427ae.js" crossorigin="anonymous"></script>
-    <script>
-        document.getElementById('demo-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const inputText = document.getElementById('input-text').value;
-            // Simulate an image being generated
-            document.getElementById('generated-image').innerHTML = `<img src="generated-image-placeholder.png" alt="Generated Image" style="max-width: 100%; border: 1px solid #ddd; border-radius: 8px; padding: 1rem;">`;
-        });
-        var nav = document.querySelector('.header');
-
-        window.addEventListener('scroll', function (event) {
-            event.preventDefault();
-
-            if (window.scrollY <= 480) {
-                nav.style.backgroundColor = 'rgba(56, 56, 56, 0.253)';
-                nav.style.transitionDuration = '0.5s';
-            } else {
-                nav.style.backgroundColor = 'rgba(91, 91, 91, 0.75)';
-                nav.style.transitionDuration = '0.5s';
-            }
-        });
-    </script>
+    <script src="{% static 'script.js' %}"></script>
 
 </body>
 
