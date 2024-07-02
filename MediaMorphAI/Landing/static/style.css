@@ -16,20 +16,6 @@ html {
     scroll-behavior: smooth;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 header {
     background-color:rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(4px);
@@ -124,35 +110,6 @@ header nav a::before {
     color: #fff;
     text-align: center;
     position: relative;
-    /* background: linear-gradient(45deg, #ff6b6b, #304af0, #00b4d8, #6a11cb, #ff6b6b, #ff8e53);
-    background-size: 600% 600%;
-    animation: gradientAnimation 10s ease infinite; */
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    20% {
-        background-position: 50% 50%;
-    }
-
-    40% {
-        background-position: 100% 50%;
-    }
-
-    60% {
-        background-position: 50% 50%;
-    }
-
-    80% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 .hero:before {
@@ -210,6 +167,7 @@ header nav a::before {
     padding: 4rem 2rem;
     text-align: center;
     animation: fadeInUp 2s ease-out;
+    /* animation-timeline: view(0 250px); */
 }
 
 .section h2 {
