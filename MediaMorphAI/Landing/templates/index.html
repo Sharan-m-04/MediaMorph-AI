@@ -34,7 +34,7 @@
 
     <section id="about">
         <h1>About Us</h1>
-        <div class="content">
+        <div class="content reveal fade-pop">
             <p class="about-text">Welcome to MediaMorph AI, the cutting-edge platform that transforms your text prompts
                 into stunning media content. Whether you're looking to generate high-quality images for your projects or
                 simply explore the creative possibilities of AI, MediaMorph AI is your go-to solution.
@@ -51,7 +51,7 @@
 
     <section class="section" id="how-it-works">
         <h2>How It Works</h2>
-        <div class="steps">
+        <div class="steps reveal fade-pop">
             <div class="step">
                 <i class="fa-solid fa-rectangle-ad text-icon"></i>
                 <p>Enter your text input.</p>
@@ -69,7 +69,7 @@
 
     <section class="section" id="features">
         <h2>Features</h2>
-        <div class="features">
+        <div class="features reveal fade-pop">
             <div class="feature">
                 <h3>High Quality Images</h3>
                 <p>Our AI generates images with incredible detail and high-quality visuals.</p>
@@ -87,7 +87,7 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <form>
+        <form class=" reveal fade-pop">
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
             <input type="email" id="email" name="email" placeholder="Enter the E-mail" required>
             <textarea id="message" name="message" placeholder="Enter the message" required rows="5"></textarea>
@@ -112,7 +112,34 @@
     </footer>
     <script src="https://kit.fontawesome.com/b2b6d427ae.js" crossorigin="anonymous"></script>
     <script src="{% static 'script.js' %}"></script>
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const formData = new FormData(this);
 
+            fetch(window.location.pathname, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken')
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Feedback submitted successfully');
+                    } else {
+                        alert('Error submitting feedback');
+                    }
+                })
+                .catch(error => {
+                    alert('Error submitting feedback:', error);
+                });
+        });
+        function getCookie(name) {
+            const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+            return cookieValue ? cookieValue.pop() : '';
+        }
+    </script>
 </body>
 
 </html>

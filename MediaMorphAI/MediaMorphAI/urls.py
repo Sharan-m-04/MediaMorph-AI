@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import include, path
 from GenerateImage.views import generateimage
 from Landing.views import landing
+from Feedbacks.views import submit_feedback
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing),
     path('generateimage/', generateimage, name='generateimage'),
     path('accounts/', include("accounts.urls")),
+    path('feedbacks/', submit_feedback),
 ]
