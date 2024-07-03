@@ -18,6 +18,23 @@
     font-size: 24px;
 }
 
+.subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback {
+    text-decoration: none;
+    color: rgb(0, 80, 145);
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.feedback:hover {
+    color: rgb(0, 123, 224);
+}
+
 .logoutBtn {
     text-decoration: none;
     color: white;
