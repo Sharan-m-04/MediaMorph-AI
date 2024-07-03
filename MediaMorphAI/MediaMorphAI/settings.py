@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Landing',
     'GenerateImage',
     'accounts',
+    'Feedbacks',
 ]
 
 MIDDLEWARE = [
