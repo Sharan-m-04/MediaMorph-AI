@@ -12,7 +12,7 @@
     <input type="submit" value="Generate" id="generateBtn">
 </form>
 <div id="imgContainer"></div>
-<div id="downloadBtn"></div>
+<!-- <div id="downloadBtn"></div> -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -32,7 +32,7 @@
                     if (response.image_url) {
                         $('#imgContainer').html('<img src="' + response.image_url + '" width="256" height="256" alt="Generated Image">');
                         // download img not working
-                        $('#downloadBtn').html('<a id="download" href="' + response.image_url + '" download="media_morph_ai.png">Download Image</a>');
+                        // $('#downloadBtn').html('<a id="download" href="' + response.image_url + '" download="media_morph_ai.png">Download Image</a>');
                     } else {
                         $('#imgContainer').html('<p>Failed to generate image.</p>');
                     }

@@ -22,7 +22,8 @@
     text-decoration: none;
     color: white;
     background-color: rgb(0, 80, 145);
-    padding: 15px 30px;
+    padding: 10px 20px;
+    font-size: 14px;
     border-radius: 50px;
 }
 
