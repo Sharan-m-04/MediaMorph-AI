@@ -4,7 +4,12 @@
 {% block content %}
 <div class="container">
     <p class="greet">Welcome, {{user}}</p>
-    <a href="/accounts/logout" class="logoutBtn">Logout</a>
+    <div class="subContainer">
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="/feedbacks" class="feedback">Feedbacks</a>
+        {% endif %}
+        <a href="/accounts/logout" class="logoutBtn">Logout</a>
+    </div>
 </div>
 <form action="" method="post" id="generateImageForm">
     {% csrf_token %}

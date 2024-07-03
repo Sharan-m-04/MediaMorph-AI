@@ -5,17 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media AI - Generative AI for Images</title>
+    <title>MediaMorph AI - Generative AI For all Media Content</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/logo_plain.png' %}">
 </head>
 
 <body>
 
     <header class="header">
-        <div class="logo">MediaMorph AI</div>
+        <div class="logo">
+            <img src="{% static 'images/logo_plain.png' %}" alt="logo" class="logoImg">
+            MediaMorph AI
+        </div>
         <nav>
             <a href="#">Home</a>
             <a href="#about">About Us</a>
@@ -87,7 +91,8 @@
 
     <section id="contact">
         <h2>Contact Us</h2>
-        <form class=" reveal fade-pop">
+        <form class=" reveal fade-pop" action="#" method="post">
+            {% csrf_token %}
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
             <input type="email" id="email" name="email" placeholder="Enter the E-mail" required>
             <textarea id="message" name="message" placeholder="Enter the message" required rows="5"></textarea>
