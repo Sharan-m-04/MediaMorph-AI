@@ -1,3 +1,8 @@
+function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+        document.querySelector('.hamburger').classList.toggle('active');
+}
+
 function loginBtn(){
     window.open("/accounts/login", target='_self');
 }
@@ -23,3 +28,5 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+
+// window.toggleMenu = toggleMenu;
