@@ -28,6 +28,7 @@ header {
     width: 100%;
     z-index: 2;
     animation: fadeInDown 1s ease-out;
+    height: auto;
 }
 
 .logo {
@@ -72,7 +73,7 @@ header {
     opacity: 0;
 }
 
-.reveal.active {
+.reveal.acti {
     opacity: 1;
     animation: fade-pop 1s ease-in;
 }
@@ -146,6 +147,14 @@ header nav a::before {
     color: #fff;
 }
 
+.navig {
+    display: flex;
+}
+
+.header-expanded {
+    height: 300px;
+}
+
 .nav-links {
     display: flex;
     justify-content: space-between;
@@ -157,7 +166,7 @@ header nav a::before {
 }
 
 .hero {
-    background: url('images/background.png') no-repeat center center/cover;
+    background: url('images/background1.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -195,7 +204,7 @@ header nav a::before {
     padding: 1rem 2rem;
     font-size: 1rem;
     color: #fff;
-    background-color: #008e44;
+    background-color: #226db7;
     border: none;
     cursor: pointer;
     z-index: 1;
@@ -204,7 +213,7 @@ header nav a::before {
 }
 
 .hero button:hover {
-    background-color: #006631;
+    background-color: #105ca7;
 }
 
 @keyframes fadeInUp {
@@ -464,6 +473,7 @@ form button:hover {
 
     .nav-links.active {
         display: flex;
+        flex-direction: column;
     }
 
     .hamburger {
@@ -472,5 +482,10 @@ form button:hover {
 
     .loginBtn {
         margin-top: 10px;
+    }
+
+    .header .active {
+        height: 300px;
+        flex-direction: column;
     }
 }
