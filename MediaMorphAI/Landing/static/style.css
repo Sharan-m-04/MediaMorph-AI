@@ -135,6 +135,27 @@ header nav a::before {
     background-color: #ccc;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links.active {
+    display: block;
+}
+
 .hero {
     background: url('images/background.png') no-repeat center center/cover;
     height: 100vh;
@@ -432,4 +453,24 @@ form button:hover {
 
 .DevInfo:hover {
     color: rgb(220, 220, 220);
+}
+
+@media only screen and (max-width: 947px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .loginBtn {
+        margin-top: 10px;
+    }
 }
