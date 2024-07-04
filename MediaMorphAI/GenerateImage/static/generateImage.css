@@ -167,3 +167,29 @@
 .DevInfo:hover {
     color: rgb(220, 220, 220);
 }
+
+@media only screen and (max-width: 1170px) {
+    #prompt {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #generateImageForm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #prompt {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .DevInfo {
+        font-size: 14px;
+    }
+
+    .footernav {
+        font-size: 14px;
+    }
+}

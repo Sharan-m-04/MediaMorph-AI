@@ -16,21 +16,6 @@ html {
     scroll-behavior: smooth;
 }
 
-header {
-    background-color:rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
-    padding: 1rem 2rem;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    animation: fadeInDown 1s ease-out;
-    height: auto;
-}
-
 .logo {
     display: flex;
     align-items: center;
@@ -39,8 +24,8 @@ header {
 
 .logoImg {
     border-radius: 50px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-right: 15px;
 }
 
@@ -78,46 +63,24 @@ header {
     animation: fade-pop 1s ease-in;
 }
 
-header .logo {
+.header .logo {
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-/* nav {
-    margin-right: 50px;
-} */
-
-header nav a {
+.header{
+    background-color:rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem;
     color: #fff;
-    text-decoration: none;
-    margin: 0 1rem;
-    position: relative;
-}
-
-header nav a:hover::before {
-    content: "";
-    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
     width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #66fb61;
-    visibility: visible;
-    transform: scaleX(1);
-    transition: all 0.3s ease-in-out 0s;
-}
-
-header nav a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #61fb61;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
+    z-index: 2;
+    animation: fadeInDown 1s ease-out;
+    height: 75px;
 }
 
 .loginBtn {
@@ -136,34 +99,73 @@ header nav a::before {
     background-color: #ccc;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+.logo{
+    padding: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
-.hamburger i {
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-.navig {
+.navig{
     display: flex;
-}
-
-.header-expanded {
-    height: 300px;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.nav-links.active {
-    display: block;
+.navul{
+    display: flex;
+    padding: 0;
 }
+
+.navc{
+    list-style: none;
+    padding: 8px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: flex-start;
+}
+
+.navc a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'poppins', sans-serif;
+}
+
+.navc a:hover{
+    color: rgb(209, 209, 209);
+}
+
+.navc .right {
+    margin-left: auto;
+}
+
+.navs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.burger{
+    width: 33px;
+    height: 33px;
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    right: 10%;
+    top: 15px;
+}
+
+.line{
+    background-color: white;
+    width: 33px;
+    height: 4px;
+    margin: 5px 5px;
+}
+
+/* Home Section */
 
 .hero {
     background: url('images/background1.png') no-repeat center center/cover;
@@ -226,6 +228,36 @@ header nav a::before {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeInUp 2s ease-out;
+    font-size: 25px;
+    height: 100vh;
+}
+
+#about h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    text-align: center;
+}
+
+#about .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left;
 }
 
 .section {
@@ -293,35 +325,6 @@ header nav a::before {
 .step img {
     width: 100px;
     margin-bottom: 1rem;
-}
-
-#about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    text-align: center;
-    animation: fadeInUp 2s ease-out;
-    font-size: 25px;
-    height: 100vh;
-}
-
-#about h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-.about-text {
-    text-align: center;
-}
-
-#about .content {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-size: 20px;
-    line-height: 1.6;
-    text-align: left;
 }
 
 .features {
@@ -433,6 +436,8 @@ form button:hover {
     transform: scale(1.05);
 }
 
+/* Footer */
+
 .footer {
     background-color:rgb(0, 10, 17);
     color: #fff;
@@ -464,28 +469,115 @@ form button:hover {
     color: rgb(220, 220, 220);
 }
 
-@media only screen and (max-width: 947px) {
-    .nav-links {
-        display: none;
+@media only screen and (max-width: 790px) {
+    .logo {
+        position: absolute;
+        left: 5%;
+    }
+    
+    .navul {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .header {
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    
+    .navig {
+        height: 350px;
+        flex-direction: column;
+        transition: all 0.15s ease-out;
+    }
+
+    .navc a{
         text-align: center;
     }
+    
+    .burger {
+        display: block;
+    }
+    
+    .menu {
+        width: 70px;
+        height: 30px;
+    }
+    
+    .h-nav-resp {
+        height: 54px;
+    }
+    
+    .v-class-resp {
+        display: none;
+    }
 
-    .nav-links.active {
+    /* Home Section */
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* About Section */
+
+    #about {
+        height: auto;
+    }
+
+    #about h1 {
+        font-size: 40px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    /* How It Works Section */
+
+    #how-it-works h2 {
+        font-size: 40px;
+    }
+
+    /* Features Section */
+
+    #features h2 {
+        font-size: 40px;
+    }
+
+    /* Contact Section */
+
+    #contact h2 {
+        font-size: 40px;
+    }
+
+    form {
+        width: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
-    .hamburger {
-        display: flex;
+    form input {
+        width: 70%;
+    }
+    
+    form textarea {
+        width: 70%;
     }
 
-    .loginBtn {
-        margin-top: 10px;
+    /* Footer Section */
+
+    .DevInfo {
+        font-size: 14px;
     }
 
-    .header .active {
-        height: 300px;
-        flex-direction: column;
+    .footernav {
+        font-size: 14px;
     }
 }

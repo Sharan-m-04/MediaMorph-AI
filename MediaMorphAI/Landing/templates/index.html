@@ -16,21 +16,26 @@
 <body>
 
     <header class="header">
-        <div class="logo">
-            <img src="{% static 'images/logo_plain.png' %}" alt="logo" class="logoImg">
-            MediaMorph AI
-        </div>
-        <nav class="navig">
-            <a href="#" class="nav-links">Home</a>
-            <a href="#about" class="nav-links">About Us</a>
-            <a href="#how-it-works" class="nav-links">How It Works</a>
-            <a href="#features" class="nav-links">Features</a>
-            <a href="#contact" class="nav-links">Contact</a>
-            <button class="loginBtn" onclick="loginBtn()">Login</button>
+        <nav class="navig h-nav-resp">
+            <div class="logo">
+                <a href="/">
+                    <img src="{% static 'images/logo_plain.png' %}" alt="logo" class="logoImg">
+                </a>
+            </div>
+            <ul class="navul v-class-resp">
+                <li class="navc"><a href="#">Home</a></li>
+                <li class="navc"><a href="#about">About Us</a></li>
+                <li class="navc"><a href="#how-it-works">How It Works</a></li>
+                <li class="navc"><a href="#features">Features</a></li>
+                <li class="navc"><a href="#contact">Contact</a></li>
+                <li class="navc"><button class="loginBtn" onclick="loginBtn()">Login</button></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </nav>
-        <div class="hamburger" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
     </header>
 
     <section class="hero" id="home">

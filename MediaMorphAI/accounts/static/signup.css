@@ -2,7 +2,7 @@
 
 body {
     font-family: 'poppins', 'worksans';
-    background-color: #f0fff0;
+    background-color: #cee6ff;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@ body {
 }
 
 .login-container h2 {
-    color: #003c08;
+    color: #002b58;
 }
 
 .input-group {
@@ -42,7 +42,7 @@ body {
 }
 
 .submit-btn {
-    background-color: #009b15;
+    background-color: #002b58;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -53,11 +53,11 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #00bb19;
+    background-color: #004c9e;
 }
 
 a {
-    color: #003c0d;
+    color: #002b58;
     text-decoration: underline;
     font-size: 12px;
     display: block;
