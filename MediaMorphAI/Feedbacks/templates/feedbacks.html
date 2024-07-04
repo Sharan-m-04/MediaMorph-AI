@@ -13,27 +13,12 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="navig h-nav-resp">
-            <a href="/dashboard"><img src="{% static 'Images/logo.png' %}" alt="Logo" class="logo"></a>
-            <div class="navs">
-                <ul class="navul v-class-resp">
-                    <li class="navc"><a href="/dashboard">Dashboard</a></li>
-                    <li class="navc"><a href="/inventory">Inventory</a></li>
-                    <li class="navc"><a href="/transactions">Transactions</a></li>
-                    {% if user.is_authenticated and user.is_superuser %}
-                    <li class="navc"><a href="/feedbacks">Feedbacks</a></li>
-                    {% endif %}
-                </ul>
-                <div class="logout navig" onclick="logout()">Log out</div>
-            </div>
-            <div class="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
-    </header>
+    <div class="container">
+        <p class="greet">Welcome, {{user}}</p>
+        <div class="subContainer">
+            <a href="/accounts/logout" class="logoutBtn">Logout</a>
+        </div>
+    </div>
 
     <section class="main-content">
         <div class="table">
@@ -56,17 +41,18 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p>Developed by ALL </p>
-            <nav>
-                <ul>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/inventory">Inventory</a></li>
-                    <li><a href="/transactions">Transactions</a></li>
-                </ul>
-            </nav>
-            <p>Inventory Management System</p>
+    <footer class="footer">
+        <p>MediaMorph AI | Developed by
+            <a href="mailto:msharan.hnp@gmail.com" class="DevInfo">Sharan</a>
+            • <a href="mailto:rohanms0405@gmail.com" class="DevInfo">Rohan</a>
+            • <a href="mailto:24ranjith2003@gmail.com" class="DevInfo">Ranjith</a>
+            • <a href="mailto:shivamv1972@gmail.com" class="DevInfo">Vishnu</a>
+        </p>
+        <div>
+            <a href="/generateimage" class="footernav">Generate Image</a>
+            {% if user.is_authenticated and user.is_superuser %}
+            <a href="/feedbacks" class="footernav">Feedbacks</a>
+            {% endif %}
         </div>
     </footer>
     <script src="{% static 'feedbacks.js' %}" type="text/javascript"></script>
