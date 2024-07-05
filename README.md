@@ -3,13 +3,13 @@
 ![MediaMorph AI](https://github.com/Sharan-m-04/MediaMorph-AI/assets/101189789/9f8513ba-6671-4f6b-a9a0-3dbd02bf4fe8)
 
 ## Table of Contents
-- [Description](#description)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Database](#database)
-- [Collaborators](#collaborators)
+1. [Description](#description)
+2. [Features](#features)
+3. [Project Structure](#project-structure)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Database](#database)
+7. [Collaborators](#collaborators)
 
 ## Description
 
