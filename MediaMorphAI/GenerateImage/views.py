@@ -25,5 +25,3 @@ def generateimage(request):
             print(f"Error generating image: {e}")
             return JsonResponse({'err_msg': 'Failed to generate Image'}, status=500)
     return render(request, 'generateImage.html')
-
-# TODO: FIX DOWNLOAD IMAGE

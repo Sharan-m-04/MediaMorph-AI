@@ -47,7 +47,7 @@
                 },
                 success: function (response) {
                     if (response.image_url) {
-                        $('#imgContainer').html('<img src="' + response.image_url + '" width="256" height="256" alt="Generated Image">');
+                        $('#imgContainer').html('<img src="' + response.image_url + '" width="256" height="256" alt="Generated Image" class="respImg">');
                         // download img not working
                         // $('#downloadBtn').html('<a id="download" href="' + response.image_url + '" download="media_morph_ai.png">Download Image</a>');
                     } else {
