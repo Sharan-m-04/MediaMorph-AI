@@ -93,6 +93,9 @@ html {
     z-index: 1;
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 50px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
 }
 
 .loginBtn:hover {
@@ -494,6 +497,12 @@ form button:hover {
 
     .navc a{
         text-align: center;
+    }
+
+    .loginBtn {
+        position: relative;
+        right: 0;
+        top: 0;
     }
     
     .burger {
