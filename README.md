@@ -6,7 +6,6 @@ Welcome to MediaMorph AI, a cutting-edge platform designed to revolutionize cont
 
 - **User-friendly Interface**: Easily enter your prompt and generate images with a single click.
 - **High-quality Image Generation**: Powered by DALL-E 2, MediaMorph AI produces high-resolution images tailored to your descriptions.
-- **Download Functionality**: Users can download generated images directly to their devices.
 
 ## Project Structure
 
