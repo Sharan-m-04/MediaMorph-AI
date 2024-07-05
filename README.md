@@ -6,10 +6,9 @@
 1. [Description](#description)
 2. [Features](#features)
 3. [Project Structure](#project-structure)
-4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Database](#database)
-7. [Collaborators](#collaborators)
+4. [Usage](#usage)
+5. [Database](#database)
+6. [Collaborators](#collaborators)
 
 ## Description
 
@@ -25,27 +24,6 @@ Welcome to MediaMorph AI, a cutting-edge platform designed to revolutionize cont
 - **Backend**: Django framework for handling requests and managing the application.
 - **Frontend**: Simple and intuitive interface for entering prompts and viewing generated images.
 - **AI Integration**: DALL-E 2 API for generating images based on user input.
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Sharan-m-04/MediaMorph-AI.git
-   cd MediaMorph-AI
-   ```
-
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Set up the Django application:
-   ```bash
-   python manage.py migrate
-   python manage.py runserver
-   ```
-
-4. Open your browser and navigate to `http://127.0.0.1:8000` to start using MediaMorph AI.
 
 ## Usage
 
