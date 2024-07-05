@@ -38,8 +38,7 @@ Welcome to MediaMorph AI, a cutting-edge platform designed to revolutionize cont
 
 1. Enter a descriptive prompt in the input field.
 2. Click on the "Generate" button.
-3. View the generated image.
-4. Click the "Download" button to save the image to your device.
+3. View the generated image and save it to your device.
 
 ## Database
 
@@ -52,19 +51,7 @@ This project uses SQLite as the database backend.
 - [Ranjith](https://github.com/ranjith-nayak)
 - [Vishnu H S](https://github.com/VisHnuhs117)
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
-## Acknowledgements
-
-- Special thanks to the creators of Django and DALL-E 2 for their incredible tools.
-- Gratitude to all contributors and users who support this project.
-
 ---
 
-Feel free to explore the code and suggest improvements. Happy creating with MediaMorph AI!
+- Special thanks to the creators of Django and DALL-E 2 for their incredible tools.
+- Gratitude to all contributors to support this project.
