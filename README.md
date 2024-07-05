@@ -53,5 +53,4 @@ This project uses SQLite as the database backend.
 
 ---
 
-- Special thanks to the creators of Django and DALL-E 2 for their incredible tools.
-- Gratitude to all contributors to support this project.
+Special thanks to the creators of Django and DALL-E 2 for their incredible tools and Gratitude to all contributors to support this project.
