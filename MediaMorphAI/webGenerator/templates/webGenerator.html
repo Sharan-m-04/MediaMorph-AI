@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} MediaMorph AI | Generate Website {% endblock %}
+{% block content %}
+<div class="container">
+    <p class="greet">Welcome, {{user}}</p>
+    <div class="subContainer">
+        <a href="/accounts/logout" class="logoutBtn">Logout</a>
+    </div>
+</div>
+<div class="main-container">
+<form action="" method="post" id="generateImageForm">
+    {% csrf_token %}
+    <input type="text" name="prompt" id="prompt" placeholder="Enter Your Prompt">
+    <input type="submit" value="Generate" id="generateBtn">
+</form>
+<div id="imgContainer"></div>
+</div>
+<footer class="footer">
+    <p>MediaMorph AI | Developed by
+        <a href="mailto:msharan.hnp@gmail.com" class="DevInfo">Sharan</a>
+        • <a href="mailto:rohanms0405@gmail.com" class="DevInfo">Rohan</a>
+        • <a href="mailto:24ranjith2003@gmail.com" class="DevInfo">Ranjith</a>
+        • <a href="mailto:shivamv1972@gmail.com" class="DevInfo">Vishnu</a>
+    </p>
+    <div>
+        <a href="/generateimage" class="footernav">Generate Image</a>
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="/feedbacks" class="footernav">Feedbacks</a>
+        {% endif %}
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    
+</script>
+{% endblock %}
