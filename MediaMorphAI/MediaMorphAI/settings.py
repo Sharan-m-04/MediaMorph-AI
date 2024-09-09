@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'GenerateImage',
     'accounts',
     'Feedbacks',
+    'webGenerator',
 ]
 
 MIDDLEWARE = [
