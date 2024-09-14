@@ -1,0 +1,29 @@
+{% extends 'generateWebLayout.html' %}
+{% load static %}
+{% block title %} MediaMorph AI | Generate Website {% endblock %}
+{% block content %}
+<div class="container">
+    <p class="greet">Welcome, {{user}}</p>
+    <div class="subContainer">
+        <a href="/accounts/logout" class="logoutBtn">Logout</a>
+    </div>
+</div>
+<div class="main-container fade-in">
+    <iframe srcdoc="{{ source_code|safe }}" title="Preview" frameborder="0" border="0" cellspacing="0" style="border-style: none;width: 100%; height: 100vh;"></iframe>
+</div>
+<footer class="footer">
+    <p>MediaMorph AI | Developed by
+        <a href="mailto:msharan.hnp@gmail.com" class="DevInfo">Sharan</a>
+        • <a href="mailto:rohanms0405@gmail.com" class="DevInfo">Rohan</a>
+        • <a href="mailto:24ranjith2003@gmail.com" class="DevInfo">Ranjith</a>
+        • <a href="mailto:shivamv1972@gmail.com" class="DevInfo">Vishnu</a>
+    </p>
+    <div>
+        <a href="/generateimage" class="footernav">Generate Image</a>
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="/feedbacks" class="footernav">Feedbacks</a>
+        {% endif %}
+    </div>
+</footer>
+<script src="https://kit.fontawesome.com/b2b6d427ae.js" crossorigin="anonymous"></script>
+{% endblock %}
