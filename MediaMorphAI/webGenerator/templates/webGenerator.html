@@ -11,7 +11,7 @@
 <div class="main-container fade-in">
     <form method="POST" onsubmit="return false;" class="qnaform">
         {% csrf_token %}
-        <label class="question" id="question">What is the question? {{ question }}</label>
+        <label class="question" id="question">Loading... {{ question }}</label>
         <div class="formcontainer">
             <input type="text" class="answer" name="answer" placeholder="Enter the response here" id="responseText"
                 required>
@@ -23,6 +23,11 @@
     {% csrf_token %}
     <input type="hidden" name="responses" id="responses">
     </form>
+
+    {{resp}}
+    <br><br>
+    {{source_code}}
+
 </div>
 <footer class="footer">
     <p>MediaMorph AI | Developed by
@@ -98,36 +103,36 @@
     });
 
     // Function to get CSRF token from the cookie
-    function getCookie(name) {
-        let cookieValue = null;
-        if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                // Does this cookie string begin with the name we want?
-                if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                    break;
-                }
-            }
-        }
-        return cookieValue;
-    }
+    // function getCookie(name) {
+    //     let cookieValue = null;
+    //     if (document.cookie && document.cookie !== '') {
+    //         const cookies = document.cookie.split(';');
+    //         for (let i = 0; i < cookies.length; i++) {
+    //             const cookie = cookies[i].trim();
+    //             // Does this cookie string begin with the name we want?
+    //             if (cookie.substring(0, name.length + 1) === (name + '=')) {
+    //                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     return cookieValue;
+    // }
 
-    const csrftoken = getCookie('csrftoken');
+    // const csrftoken = getCookie('csrftoken');
 
     // Include CSRF token in AJAX requests
-    fetch('/preview/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken  // Add the CSRF token to the request headers
-        },
-        body: JSON.stringify({ responses: responses })
-    })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
+    // fetch('/preview/', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'X-CSRFToken': csrftoken  // Add the CSRF token to the request headers
+    //     },
+    //     body: JSON.stringify({ responses: responses })
+    // })
+    //     .then(response => response.json())
+    //     .then(data => console.log(data))
+    //     .catch(error => console.error('Error:', error));
 
 </script>
 {% endblock %}
