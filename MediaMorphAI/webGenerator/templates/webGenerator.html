@@ -42,6 +42,7 @@
 <script src="https://kit.fontawesome.com/b2b6d427ae.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    let flag = 0;
     let quest = document.getElementById('question');
     let questions = [
         'What is the primary purpose of the website?',
@@ -90,6 +91,7 @@
         if (currentQuestionIndex < questions.length) {
             questionText.textContent = questions[currentQuestionIndex];
         } else {
+            flag = 1;
             hiddenResponsesInput.value = JSON.stringify(responses);
             document.getElementById('final-form').submit();
             // console.log(hiddenResponsesInput.value);
