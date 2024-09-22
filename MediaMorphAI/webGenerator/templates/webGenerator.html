@@ -8,7 +8,7 @@
         <a href="/accounts/logout" class="logoutBtn">Logout</a>
     </div>
 </div>
-<div class="main-container fade-in">
+<div class="main-container fade-in" id="main-container">
     <form method="POST" onsubmit="return false;" class="qnaform">
         {% csrf_token %}
         <label class="question" id="question">Loading... {{ question }}</label>
@@ -24,6 +24,22 @@
         <input type="hidden" name="responses" id="responses">
     </form>
 
+
+</div>
+<div class="loading-container hidden" id="loading-container">
+    <div class="ani-container" id="ani-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+
+        <div class="blur-layer"></div>
+
+        <div id="text" class="text">Magic is happening</div>
+    </div>
 </div>
 <footer class="footer">
     <p>MediaMorph AI | Developed by
@@ -34,6 +50,7 @@
     </p>
     <div>
         <a href="/generateimage" class="footernav">Generate Image</a>
+        <a href="/generateweb" class="footernav">Generate Web</a>
         {% if user.is_authenticated and user.is_superuser %}
         <a href="/feedbacks" class="footernav">Feedbacks</a>
         {% endif %}
@@ -50,7 +67,7 @@
         'Do you have a preferred color scheme or branding guidelines for the website?',
         'What type of layout do you prefer: centered, full-width, or a mix of both?',
         'What kind of navigation menu do you want: horizontal, vertical, or a hamburger menu?',
-        'Will you need a logo or placeholder for the logo? If yes, provide the text or image details.',
+        'Will you need a logo or placeholder for the logo?',
         'What kind of fonts do you prefer, or do you want to use default web fonts?',
         'Do you want any specific animations or transitions (e.g., fade in, slide up, etc.)?',
         'What are the specific features or elements you want to be animated?',
@@ -69,6 +86,8 @@
     const responseInput = document.getElementById('responseText');
     const continueButton = document.getElementById('continue-btn');
     const hiddenResponsesInput = document.getElementById('responses');
+    const mainContent = document.getElementById('main-container');
+    const loadingAnimation = document.getElementById('loading-container');
 
     questionText.textContent = questions[currentQuestionIndex];
 
@@ -93,9 +112,31 @@
         } else {
             flag = 1;
             hiddenResponsesInput.value = JSON.stringify(responses);
+            mainContent.classList.add('hidden');
+            loadingAnimation.classList.add('visible');
             document.getElementById('final-form').submit();
-            // console.log(hiddenResponsesInput.value);
         }
     });
+    const texts = [
+        "Magic is happening",
+        "Collecting fonts",
+        "Applying styles",
+        "Adding animations",
+        "Almost Done"
+    ];
+
+    let index = 0;
+    const textElement = document.getElementById('text');
+
+    function changeText() {
+        textElement.classList.remove('show');
+        setTimeout(() => {
+            textElement.innerText = texts[index];
+            textElement.classList.add('show');
+            index = (index + 1) % texts.length;
+        }, 500);
+    }
+
+    setInterval(changeText, 3000);
 </script>
 {% endblock %}
