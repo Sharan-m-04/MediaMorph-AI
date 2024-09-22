@@ -132,6 +132,117 @@
     color: rgb(220, 220, 220);
 }
 
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ani-container {
+    position: relative;
+    width: 500px;
+    height: 100vh;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15%;
+    top: 40%;
+    background-color: #ff3939;
+    animation: spin 4s linear infinite;
+    opacity: 0.8;
+    filter: blur(15px);
+}
+
+.circle:nth-child(2) {
+    background-color: #37ff37;
+    backdrop-filter: blur(25px);
+    animation-delay: 0.2s;
+}
+
+.circle:nth-child(3) {
+    background-color: #4b4bff;
+    backdrop-filter: blur(25px);
+    animation-delay: 0.8s;
+}
+
+.circle:nth-child(4) {
+    background-color: #ffff41;
+    backdrop-filter: blur(25px);
+    animation-delay: 0.4s;
+}
+
+.circle:nth-child(5) {
+    background-color: #37ff37;
+    backdrop-filter: blur(25px);
+    animation-delay: 2.0s;
+}
+
+.circle:nth-child(6) {
+    background-color: #ff844b;
+    backdrop-filter: blur(25px);
+    animation-delay: 2.4s;
+}
+
+.circle:nth-child(7) {
+    background-color: #ffff41;
+    backdrop-filter: blur(25px);
+    animation-delay: 2.8s;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) translateX(160px) rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg) translateX(-60px) rotate(-180deg);
+    }
+
+    100% {
+        transform: rotate(180deg) translateX(-160px) rotate(-180deg);
+    }
+}
+
+.blur-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(25px);
+    z-index: 2;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 3;
+    white-space: nowrap;
+}
+
+.text.show {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}
+
 @media only screen and (max-width: 1170px) {
     #prompt {
         width: 40%;
