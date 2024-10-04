@@ -1,35 +1,28 @@
-# MediaMorph AI: Generative AI For Content Creation
+# Inspyr AI: Generative AI For Content Creation
 
-![MediaMorph AI](https://github.com/Sharan-m-04/MediaMorph-AI/assets/101189789/9f8513ba-6671-4f6b-a9a0-3dbd02bf4fe8)
+![Inspyr AI](https://github.com/Sharan-m-04/MediaMorph-AI/assets/101189789/9f8513ba-6671-4f6b-a9a0-3dbd02bf4fe8)
 
 ## Table of Contents
 1. [Description](#description)
 2. [Features](#features)
 3. [Project Structure](#project-structure)
-4. [Usage](#usage)
-5. [Database](#database)
-6. [Collaborators](#collaborators)
+4. [Database](#database)
+5. [Collaborators](#collaborators)
 
 ## Description
 
-Welcome to MediaMorph AI, a cutting-edge platform designed to revolutionize content creation using the power of generative AI. Leveraging Django and DALL-E 2, our tool allows users to generate stunning images based on their textual prompts.
+Welcome to Inspyr AI, a cutting-edge platform designed to revolutionize content creation using the power of generative AI. Leveraging Django and DALL-E 2, our tool allows users to generate stunning images based on their textual prompts.
 
 ## Features
 
-- **User-friendly Interface**: Easily enter your prompt and generate images with a single click.
-- **High-quality Image Generation**: Powered by DALL-E 2, MediaMorph AI produces high-resolution images tailored to your descriptions.
+- **Generate Image:** Generate images with the text prompts.
+- **Generate Web:** Generate websites just by answering some questions about your business or portfolio.
 
 ## Project Structure
 
 - **Backend**: Django framework for handling requests and managing the application.
 - **Frontend**: Simple and intuitive interface for entering prompts and viewing generated images.
 - **AI Integration**: DALL-E 2 API for generating images based on user input.
-
-## Usage
-
-1. Enter a descriptive prompt in the input field.
-2. Click on the "Generate" button.
-3. View the generated image and save it to your device.
 
 ## Database
 
