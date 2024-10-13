@@ -19,7 +19,6 @@ from django.urls import include, path
 from GenerateImage.views import generateimage
 from Landing.views import landing
 from Feedbacks.views import submit_feedback
-# from webGenerator.views import generateweb
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +26,4 @@ urlpatterns = [
     path('generateimage/', generateimage, name='generateimage'),
     path('accounts/', include("accounts.urls")),
     path('feedbacks/', submit_feedback),
-    # path('generateweb/', generateweb, name='generateweb'),
-    path('generateweb/', include('webGenerator.urls')),
 ]
