@@ -4,7 +4,7 @@
 
 ## Table of Contents
 1. [Description](#description)
-2. [Features](#features)
+2. [Feature](#feature)
 3. [Project Structure](#project-structure)
 4. [Database](#database)
 5. [Collaborators](#collaborators)
@@ -13,10 +13,9 @@
 
 Welcome to MediaMorph AI, a cutting-edge platform designed to revolutionize content creation using the power of generative AI. Leveraging Django and DALL-E 2, our tool allows users to generate stunning images based on their textual prompts.
 
-## Features
+## Feature
 
 - **Generate Image:** Generate images with the text prompts.
-- **Generate Web:** Generate websites just by answering some questions about your business or portfolio.
 
 ## Project Structure
 
