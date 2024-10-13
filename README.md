@@ -1,6 +1,6 @@
-# Inspyr AI: Generative AI For Content Creation
+# MediaMorph AI: Generative AI For Content Creation
 
-![Inspyr AI](https://github.com/Sharan-m-04/MediaMorph-AI/assets/101189789/9f8513ba-6671-4f6b-a9a0-3dbd02bf4fe8)
+![MediaMorph AI](https://github.com/Sharan-m-04/MediaMorph-AI/assets/101189789/9f8513ba-6671-4f6b-a9a0-3dbd02bf4fe8)
 
 ## Table of Contents
 1. [Description](#description)
@@ -11,7 +11,7 @@
 
 ## Description
 
-Welcome to Inspyr AI, a cutting-edge platform designed to revolutionize content creation using the power of generative AI. Leveraging Django and DALL-E 2, our tool allows users to generate stunning images based on their textual prompts.
+Welcome to MediaMorph AI, a cutting-edge platform designed to revolutionize content creation using the power of generative AI. Leveraging Django and DALL-E 2, our tool allows users to generate stunning images based on their textual prompts.
 
 ## Features
 
